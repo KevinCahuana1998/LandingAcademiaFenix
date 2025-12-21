@@ -151,12 +151,30 @@ function initCarousel() {
     const slides = track.querySelectorAll('.carousel-slide');
     const prevBtn = document.getElementById('carousel-prev');
     const nextBtn = document.getElementById('carousel-next');
-    const indicators = document.querySelectorAll('.carousel-indicator');
+    const indicatorsContainer = document.getElementById('carousel-indicators');
     
     let currentIndex = 0;
     let autoplayInterval = null;
     const totalSlides = slides.length;
     const autoplayDelay = 5000; // 5 seconds
+
+    // Generate indicators dynamically
+    indicatorsContainer.innerHTML = '';
+    for (let i = 0; i < totalSlides; i++) {
+        const indicator = document.createElement('button');
+        indicator.className = `carousel-indicator w-3 h-3 rounded-full transition-all duration-300 ${i === 0 ? 'bg-primary-500' : 'bg-gray-300'}`;
+        indicator.setAttribute('data-index', i);
+        indicator.setAttribute('aria-label', `Ir al testimonio ${i + 1}`);
+        indicator.addEventListener('click', function() {
+            currentIndex = i;
+            updateCarousel();
+            resetAutoplay();
+        });
+        indicatorsContainer.appendChild(indicator);
+    }
+
+    // Get dynamically created indicators
+    const indicators = indicatorsContainer.querySelectorAll('.carousel-indicator');
 
     // Initialize carousel
     updateCarousel();
@@ -174,15 +192,6 @@ function initCarousel() {
         currentIndex = (currentIndex + 1) % totalSlides;
         updateCarousel();
         resetAutoplay();
-    });
-
-    // Indicator clicks
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', function() {
-            currentIndex = index;
-            updateCarousel();
-            resetAutoplay();
-        });
     });
 
     // Pause autoplay on hover
