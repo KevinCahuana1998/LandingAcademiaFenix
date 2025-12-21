@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Academia Fenix - Formación de excelencia para tu futuro profesional. Descubre nuestros programas educativos y testimonios de éxito.">
+    <title>Academia Fenix - Formación de Excelencia</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#e6f0f9',
+                            100: '#cce1f3',
+                            200: '#99c3e7',
+                            300: '#66a5db',
+                            400: '#3387cf',
+                            500: '#1e3a5f',
+                            600: '#1a3252',
+                            700: '#152945',
+                            800: '#112138',
+                            900: '#0c182b'
+                        },
+                        accent: {
+                            50: '#fdf8ed',
+                            100: '#fbf1db',
+                            200: '#f7e3b7',
+                            300: '#f3d593',
+                            400: '#efc76f',
+                            500: '#d4a853',
+                            600: '#b38f47',
+                            700: '#92763b',
+                            800: '#715d2f',
+                            900: '#504423'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="font-sans antialiased text-gray-800 bg-white">
+
+    <!-- ============================================
+         NAVBAR - Fixed navigation with smooth scroll
+         ============================================ -->
+    <nav id="navbar"
+        class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+
+                <!-- Logo -->
+                <a href="#inicio" class="flex items-center space-x-3 group">
+                    <div
+                        class="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                        <span class="text-white font-bold text-lg lg:text-xl">AF</span>
+                    </div>
+                    <span
+                        class="text-xl lg:text-2xl font-bold bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent">
+                        Academia Fenix
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <a href="#inicio"
+                        class="nav-link px-4 py-2 rounded-lg text-gray-600 hover:text-primary-500 hover:bg-primary-50 font-medium transition-all duration-300">
+                        Inicio
+                    </a>
+                    <a href="#objetivo"
+                        class="nav-link px-4 py-2 rounded-lg text-gray-600 hover:text-primary-500 hover:bg-primary-50 font-medium transition-all duration-300">
+                        Objetivo
+                    </a>
+                    <a href="#testimonios"
+                        class="nav-link px-4 py-2 rounded-lg text-gray-600 hover:text-primary-500 hover:bg-primary-50 font-medium transition-all duration-300">
+                        Testimonios
+                    </a>
+                    <a href="#reflexion"
+                        class="nav-link px-4 py-2 rounded-lg text-gray-600 hover:text-primary-500 hover:bg-primary-50 font-medium transition-all duration-300">
+                        Reflexión
+                    </a>
+                    <a href="https://academia-fenix.vercel.app/" target="_blank"
+                        class="ml-2 px-5 py-2 bg-gradient-to-r from-accent-500 to-accent-600 text-white font-semibold rounded-lg shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                        INTRANET
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-toggle"
+                    class="md:hidden relative w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors"
+                    aria-label="Toggle menu">
+                    <div class="hamburger-icon">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="px-4 py-4 space-y-2">
+                <a href="#inicio"
+                    class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-600 hover:text-primary-500 hover:bg-primary-50 font-medium transition-all duration-300">
+                    Inicio
+                </a>
+                <a href="#objetivo"
+                    class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-600 hover:text-primary-500 hover:bg-primary-50 font-medium transition-all duration-300">
+                    Objetivo
+                </a>
+                <a href="#testimonios"
+                    class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-600 hover:text-primary-500 hover:bg-primary-50 font-medium transition-all duration-300">
+                    Testimonios
+                </a>
+                <a href="#reflexion"
+                    class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-600 hover:text-primary-500 hover:bg-primary-50 font-medium transition-all duration-300">
+                    Reflexión
+                </a>
+                <a href="https://academia-fenix.vercel.app/" target="_blank"
+                    class="block px-4 py-3 bg-gradient-to-r from-accent-500 to-accent-600 text-white font-semibold rounded-lg text-center">
+                    INTRANET
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         SECTION 1: INICIO - Hero section
+         ============================================ -->
+    <section id="inicio"
+        class="min-h-screen flex items-center pt-20 lg:pt-24 bg-gradient-to-br from-white via-primary-50/30 to-accent-50/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+                <!-- Left Column: Title & Description -->
+                <div class="animate-section order-2 lg:order-1">
+                    <div
+                        class="inline-flex items-center px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-medium mb-6">
+                        <span class="w-2 h-2 bg-accent-500 rounded-full mr-2 animate-pulse"></span>
+                        Formación de Excelencia
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                        Transforma tu futuro con
+                        <span class="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent">
+                            Academia Fenix
+                        </span>
+                    </h1>
+
+                    <p class="text-lg lg:text-xl text-gray-600 leading-relaxed mb-8">
+                        La Academia Fénix está especializada en la preparación COAR y tambiém em la preparación para
+                        concursos como la ONEM, CONAMAT y BECA 18, enseñando cursos como Matemáticas, Razonamiento
+                        Matemático y Razonamiento Verbal, además, mediante sus talleres socioemocionales libera el
+                        potencial de cada uno de sus estudiantes.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#objetivo"
+                            class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-xl shadow-lg shadow-primary-500/30 hover:shadow-xl hover:shadow-primary-500/40 hover:-translate-y-1 transition-all duration-300">
+                            Conoce más
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </a>
+                        <a href="#testimonios"
+                            class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-xl border-2 border-primary-200 hover:border-primary-400 hover:bg-primary-50 transition-all duration-300">
+                            Ver testimonios
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Logo -->
+                <div class="animate-section order-1 lg:order-2 flex justify-center">
+                    <div class="relative">
+                        <!-- Decorative circles -->
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-br from-primary-200 to-accent-200 rounded-full blur-2xl opacity-40 animate-pulse-slow">
+                        </div>
+                        <div
+                            class="absolute -inset-8 bg-gradient-to-tr from-accent-100 to-primary-100 rounded-full blur-3xl opacity-30">
+                        </div>
+
+                        <!-- Logo Container -->
+                        <div
+                            class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700 rounded-3xl shadow-2xl shadow-primary-500/30 flex items-center justify-center transform hover:scale-105 transition-transform duration-500">
+                            <div class="text-center">
+                                <div
+                                    class="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                                    <img src="img/logo.png" alt="Logo">
+                                </div>
+                                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">Academia</h2>
+                                <h3 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-accent-400">Fenix</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 2: OBJETIVO - Company objectives
+         ============================================ -->
+    <section id="objetivo" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-section">
+                <span
+                    class="inline-block px-4 py-2 bg-primary-100 text-primary-600 rounded-full text-sm font-semibold mb-4">
+                    Nuestra Misión
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
+                    Nuestro Objetivo
+                </h2>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+                <!-- Left Column: Description -->
+                <div class="animate-section">
+                    <div class="space-y-6">
+                        <p class="text-lg lg:text-xl text-gray-600 leading-relaxed">
+                            El objetivo de la <strong class="text-primary-600">Academia Fenix</strong> es hacer que cada
+                            estudiante que confíe en nosotros pueda lograr ingresar al COAR o quedar dentro de los
+                            primeros puestos de los concursos en los que el estudiante esté participando, además, lo que
+                            buscamos es devolver y fortalecer la confianza de cada estudiante para que aumente la
+                            creencia en si mismo, así como la Academia Fénix cree en él.
+                        </p>
+
+                        <!-- Feature list -->
+                        <div class="grid sm:grid-cols-2 gap-4 pt-6">
+                            <div
+                                class="flex items-start space-x-3 p-4 bg-gradient-to-br from-primary-50 to-white rounded-xl border border-primary-100">
+                                <div
+                                    class="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Excelencia</h4>
+                                    <p class="text-sm text-gray-500">Calidad educativa superior</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex items-start space-x-3 p-4 bg-gradient-to-br from-accent-50 to-white rounded-xl border border-accent-100">
+                                <div
+                                    class="w-10 h-10 bg-accent-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Innovación</h4>
+                                    <p class="text-sm text-gray-500">Metodologías modernas</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex items-start space-x-3 p-4 bg-gradient-to-br from-green-50 to-white rounded-xl border border-green-100">
+                                <div
+                                    class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Comunidad</h4>
+                                    <p class="text-sm text-gray-500">Red de apoyo constante</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex items-start space-x-3 p-4 bg-gradient-to-br from-purple-50 to-white rounded-xl border border-purple-100">
+                                <div
+                                    class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Práctica</h4>
+                                    <p class="text-sm text-gray-500">Aprendizaje aplicado</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: YouTube Video -->
+                <div class="animate-section">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary-500/20">
+                        <!-- Video decorative gradient border -->
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 rounded-2xl blur opacity-30">
+                        </div>
+
+                        <div class="relative bg-gray-900 rounded-2xl overflow-hidden">
+                            <div class="aspect-video">
+                                <iframe class="w-full h-full" src="https://www.youtube.com/embed/npXg2lQUA9Q"
+                                    title="Video sobre nuestro objetivo - Academia Fenix" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center text-gray-500 text-sm mt-4">
+                        Descubre nuestra visión y misión en este video
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 3: TESTIMONIOS - Client testimonials
+         ============================================ -->
+    <section id="testimonios" class="py-20 lg:py-32 bg-gradient-to-b from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-section">
+                <span
+                    class="inline-block px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-semibold mb-4">
+                    Historias de Éxito
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    Lo que dicen nuestros estudiantes
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Conoce las experiencias de quienes han transformado su vida con Academia Fenix
+                </p>
+            </div>
+
+            <!-- Testimonial Carousel -->
+            <div class="animate-section mb-16">
+                <div class="relative max-w-4xl mx-auto">
+                    <!-- Carousel Container -->
+                    <div class="carousel-container overflow-hidden rounded-2xl">
+                        <div id="carousel-track"
+                            class="carousel-track w-full flex transition-transform duration-500 ease-out">
+
+                            <!-- Slide 1 -->
+                            <div class="carousel-slide min-w-full px-4">
+                                <div class="bg-white rounded-2xl p-8 lg:p-10 shadow-xl border border-gray-100">
+                                    <div class="flex flex-col md:flex-row items-center gap-6">
+                                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
+                                            alt="María García"
+                                            class="w-24 h-24 rounded-full object-cover ring-4 ring-primary-100">
+                                        <div class="text-center md:text-left flex-1">
+                                            <div class="flex justify-center md:justify-start mb-3">
+                                                <span class="text-accent-500 text-2xl">★★★★★</span>
+                                            </div>
+                                            <p class="text-gray-600 text-lg italic mb-4">
+                                                "Academia Fenix cambió mi vida profesional. Los profesores son
+                                                excepcionales y el contenido está perfectamente actualizado con las
+                                                demandas del
+                                                mercado."
+                                            </p>
+                                            <h4 class="font-bold text-gray-900 text-lg">María García</h4>
+                                            <p class="text-primary-600 text-sm">Graduada en Marketing Digital</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="carousel-slide min-w-full px-4">
+                                <div class="bg-white rounded-2xl p-8 lg:p-10 shadow-xl border border-gray-100">
+                                    <div class="flex flex-col md:flex-row items-center gap-6">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+                                            alt="Carlos Rodríguez"
+                                            class="w-24 h-24 rounded-full object-cover ring-4 ring-primary-100">
+                                        <div class="text-center md:text-left flex-1">
+                                            <div class="flex justify-center md:justify-start mb-3">
+                                                <span class="text-accent-500 text-2xl">★★★★★</span>
+                                            </div>
+                                            <p class="text-gray-600 text-lg italic mb-4">
+                                                "Gracias a la formación recibida, conseguí mi trabajo soñado en menos de
+                                                3 meses. La metodología práctica marca la diferencia."
+                                            </p>
+                                            <h4 class="font-bold text-gray-900 text-lg">Carlos Rodríguez</h4>
+                                            <p class="text-primary-600 text-sm">Desarrollador Full Stack</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3 -->
+                            <div class="carousel-slide min-w-full px-4">
+                                <div class="bg-white rounded-2xl p-8 lg:p-10 shadow-xl border border-gray-100">
+                                    <div class="flex flex-col md:flex-row items-center gap-6">
+                                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+                                            alt="Laura Martínez"
+                                            class="w-24 h-24 rounded-full object-cover ring-4 ring-primary-100">
+                                        <div class="text-center md:text-left flex-1">
+                                            <div class="flex justify-center md:justify-start mb-3">
+                                                <span class="text-accent-500 text-2xl">★★★★★</span>
+                                            </div>
+                                            <p class="text-gray-600 text-lg italic mb-4">
+                                                "El ambiente de aprendizaje es increíble. Me sentí apoyada en cada paso
+                                                y los resultados hablan por sí solos. ¡100% recomendado!"
+                                            </p>
+                                            <h4 class="font-bold text-gray-900 text-lg">Laura Martínez</h4>
+                                            <p class="text-primary-600 text-sm">Diseñadora UX/UI</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 4 -->
+                            <div class="carousel-slide min-w-full px-4">
+                                <div class="bg-white rounded-2xl p-8 lg:p-10 shadow-xl border border-gray-100">
+                                    <div class="flex flex-col md:flex-row items-center gap-6">
+                                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+                                            alt="Andrés López"
+                                            class="w-24 h-24 rounded-full object-cover ring-4 ring-primary-100">
+                                        <div class="text-center md:text-left flex-1">
+                                            <div class="flex justify-center md:justify-start mb-3">
+                                                <span class="text-accent-500 text-2xl">★★★★★</span>
+                                            </div>
+                                            <p class="text-gray-600 text-lg italic mb-4">
+                                                "Después de años buscando la formación correcta, finalmente la encontré.
+                                                Academia Fenix superó todas mis expectativas."
+                                            </p>
+                                            <h4 class="font-bold text-gray-900 text-lg">Andrés López</h4>
+                                            <p class="text-primary-600 text-sm">Analista de Datos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carousel Navigation Arrows -->
+                    <button id="carousel-prev"
+                        class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary-600 hover:bg-primary-500 hover:text-white transition-all duration-300 z-10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+
+                    <button id="carousel-next"
+                        class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary-600 hover:bg-primary-500 hover:text-white transition-all duration-300 z-10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+
+                    <!-- Carousel Indicators -->
+                    <div class="flex justify-center mt-6 space-x-2">
+                        <button
+                            class="carousel-indicator w-3 h-3 rounded-full bg-primary-500 transition-all duration-300"
+                            data-index="0"></button>
+                        <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-300 transition-all duration-300"
+                            data-index="1"></button>
+                        <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-300 transition-all duration-300"
+                            data-index="2"></button>
+                        <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-300 transition-all duration-300"
+                            data-index="3"></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Testimonials -->
+            <div class="animate-section">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">
+                    Testimonios en Video
+                </h3>
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+                    <!-- Video 1 -->
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl">
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-2xl blur opacity-20">
+                        </div>
+                        <div class="relative bg-gray-900 rounded-2xl overflow-hidden">
+                            <div class="aspect-video">
+                                <lite-youtube videoid="KkM6SYbVyCc" videoStartAt="5" short></lite-youtube>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl">
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-accent-500 to-primary-500 rounded-2xl blur opacity-20">
+                        </div>
+                        <div class="relative bg-gray-900 rounded-2xl overflow-hidden">
+                            <div class="aspect-video">
+                                <lite-youtube videoid="BKuoTn24ECk" videoStartAt="5" short></lite-youtube>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 4: REFLEXIÓN - Centered video
+         ============================================ -->
+    <section id="reflexion" class="py-20 lg:py-32 bg-gradient-to-b from-white to-primary-50/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-section">
+                <span
+                    class="inline-block px-4 py-2 bg-primary-100 text-primary-600 rounded-full text-sm font-semibold mb-4">
+                    Un Momento de Reflexión
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    Reflexión Final
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Tómate un momento para reflexionar sobre tu camino y el futuro que deseas construir
+                </p>
+            </div>
+
+            <!-- Centered Video -->
+            <div class="animate-section max-w-4xl mx-auto">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                    <!-- Decorative gradient border -->
+                    <div
+                        class="absolute -inset-2 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 rounded-3xl blur-lg opacity-40">
+                    </div>
+
+                    <div class="relative bg-gray-900 rounded-3xl overflow-hidden">
+                        <div class="aspect-video">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/npXg2lQUA9Q"
+                                title="Video de reflexión - Academia Fenix" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quote below video -->
+                <div class="text-center mt-12">
+                    <blockquote class="text-2xl lg:text-3xl font-light text-gray-700 italic max-w-3xl mx-auto">
+                        "El éxito no es la clave de la felicidad. La felicidad es la clave del éxito.
+                        Si amas lo que haces, tendrás éxito."
+                    </blockquote>
+                    <p class="mt-4 text-primary-600 font-semibold">— Albert Schweitzer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="bg-primary-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-3 mb-6 md:mb-0">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-br from-accent-400 to-accent-600 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">AF</span>
+                    </div>
+                    <span class="text-xl font-bold">Academia Fenix</span>
+                </div>
+
+                <div class="text-center md:text-right">
+                    <p class="text-primary-200 text-sm">
+                        © 2024 Academia Fenix. Todos los derechos reservados.
+                    </p>
+                    <p class="text-primary-300 text-xs mt-1">
+                        Formando profesionales de excelencia
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+        <a href="https://api.whatsapp.com/send?phone=51933018938&text=%C2%A1Holaa%20Ingeniero%20Vladimir!😎%20Quisiera%20saber%20más%20sobre%20el%20Ciclo%20de%20preparación%20COAR%202026🙋🏻‍♂️%20"
+            target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+            <img src="https://d209nv3nexrgbg.cloudfront.net/static/images/icons/whatsapp.a664916d2d43.svg"
+                alt="WhatsApp">
+        </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
